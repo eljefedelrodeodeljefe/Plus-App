@@ -12,7 +12,7 @@
     "publish": "electron-packager . AppName-Vue-Boilerplate --all --overwrite --out=dist/publish/ --ignore=node_modules/ --ignore=node_modules/dist/publish/",
     "pack": "node dist.js",
     "bundle-native-ios": "html-inline -i www/index.html -o platforms/ios/bundle.html",
-    "bundle-native-android": "",
+    "bundle-native-android": "echo \"Android build step not implemented\"",
     "bundle-native-apps": "npm run bundle-native-ios && npm run bundle-native-android"
   },
   "browserify": {
