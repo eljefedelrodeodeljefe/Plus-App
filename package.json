@@ -5,7 +5,7 @@
   "scripts": {
     "emu-ios": "ionic emulate ios --target='iPhone-6s, 9.3' --livereload",
     "test": "karma start karma.conf.js",
-    "dev": "watchify --detect-globals --ignore-missing -vd -e src/main.js -o www/dist/build.js",
+    "dev": "watchify --detect-globals --ignore-missing -vd -e src/main.js -o www/dist/build.js & superstatic www/",
     "dev-app": "watchify --detect-globals --ignore-missing -vd -e src/main.js -o dist/build.js & electron index.js",
     "build": "cross-env NODE_ENV=production browserify -e src/main.js | uglifyjs -c warnings=false -m > www/dist/build.js",
     "lint": "eslint --ext .js,.vue src test/unit",
