@@ -1,7 +1,7 @@
 
 <template>
 	<section id="container" >
-		<header id="header"></header>
+		<!-- <header id="header"></header> -->
 		<section class="content" >
 			<router-view keep-alive></router-view>
 		</section>
