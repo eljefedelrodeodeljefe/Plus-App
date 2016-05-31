@@ -51,16 +51,22 @@ html, body {
 section.content {
     -webkit-flex: 1 1 100%;
     min-height: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 nav.content {
-  flex: 1 20em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 20em;
+          flex: 1 20em;
 	overflow-y: scroll;
 }
 
 article {
-  flex: 2 100%;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 100%;
+          flex: 2 100%;
    overflow-y: scroll;
 }
 #container footer {

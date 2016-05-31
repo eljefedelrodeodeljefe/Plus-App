@@ -2,13 +2,23 @@
 div.artistlist-container {
   overflow-y: scroll;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  /*display: -ms-flexbox;*/
+  /*display:-webkit-flex;*/
+  display:-webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 div.artistlist-container > nav.role {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   height: 3em;
 }
 div.artistlist-container > nav.role > label {
@@ -37,10 +47,17 @@ section.artistlist-content {
   overflow-y: scroll;
   z-index: 2;
   box-shadow: 0 -0.3em 0.3em 0 rgba(0,0,0,0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   text-align: center;
   padding-top: 3em;
 }
@@ -81,8 +98,13 @@ div.input {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 div.input > label {
   margin-top: 0.6em;

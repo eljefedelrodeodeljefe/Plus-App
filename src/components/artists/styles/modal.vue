@@ -7,6 +7,7 @@
   width: 100%;
   height: 100%;
   display: table;
+  -webkit-transition: opacity .3s ease;
   transition: opacity .3s ease;
 }
 
@@ -19,6 +20,7 @@
   width: 100%;
   height: 100%;
   background-color: #fff;
+  -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
 

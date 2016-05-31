@@ -73,8 +73,13 @@ export default {
     position: absolute;
     z-index: 4;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     background-color: rgba(255, 0, 0, 0.5);
     height: 2em;
   }
@@ -86,8 +91,12 @@ export default {
   div.artist-cell {
     padding: 0.2em;
     padding-left: 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin-top: 0.12em;
     /*background-color: white;*/
     height: 4em;
@@ -107,9 +116,16 @@ export default {
     text-align: left;
     width: 100%;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   div.artist-cell > section > h3 {
     font-size: 1em;
@@ -118,8 +134,11 @@ export default {
   }
 
   label.second-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
   label.second-line > * {
     font-size: 0.8em;
@@ -128,8 +147,11 @@ export default {
 
   span.cities {
     overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
   span.cities > * {
     font-style: italic;
