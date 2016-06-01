@@ -13,6 +13,7 @@ div.artistlist-container {
 
 section.artistlist-content {
   overflow-y: scroll;
+  overflow-x: hidden;
   z-index: 2;
   box-shadow: 0 -0.3em 0.3em 0 rgba(0,0,0,0.3);
   display: -webkit-box;
@@ -125,7 +126,7 @@ label.second-line > * {
 }
 
 span.cities {
-  overflow: hidden;
+  overflow-y: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,56 +1,77 @@
 <style>
 
-
-.modal-mask {
-  overflow-y: auto;
+/*body {
   position: fixed;
+}*/
+/* The Modal (background) */
+.modal {
   z-index: 10;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow-y: auto; /* Enable scroll if needed */
+
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  overflow-y: hidden;
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
   width: 100%;
   height: 100%;
-  display: table;
-  -webkit-transition: opacity .3s ease;
-  transition: opacity .3s ease;
+  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);*/
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
 }
 
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {opacity:0}
+  to {opacity:1}
 }
 
-.modal-container {
-  overflow-y: auto;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+@keyframes animatetop {
+  from {opacity:0}
+  to {opacity:1}
 }
 
-.modal-header h3 {
-
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.modal-container > .modal-header > h1 {
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
 }
 
 .modal-body {
-
+  padding: 2px 16px;
+  max-height:100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
-.modal-default-button {
-  position: fixed;
-  right: 0;
-}
 
-
-.modal-enter, .modal-leave {
-  opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
 </style>

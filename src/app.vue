@@ -1,12 +1,12 @@
 
 <template>
-	<section id="container" >
+	<div class="body-container" >
 		<!-- <header id="header"></header> -->
 		<section class="content" >
 			<router-view keep-alive></router-view>
 		</section>
 		<!-- <footer id="footer" >This is a footer</footer> -->
-	</section>
+	</div>
 </template>
 
 <script>
@@ -34,7 +34,6 @@ html, body {
   padding: 0;
   margin: 0;
 	font-family: sans-serif;
+	overflow-x: hidden;
 }
-
-
 </style>
