@@ -10,7 +10,7 @@
 
     <section class="artistlist-content artist" v-show="(activeTab == 'artist' || !activeTab) ?  true : false" class="panel content">
       <!-- v-on:click="showModal(artist.artist_uuid)" -->
-      <div class="artist-cell" v-for="artist in artists" v-on:click="simple(artist.artist_uuid)" data-artistuuid="{{artist.artist_uuid}}">
+      <div class="artist-cell" v-for="artist in artists" v-on:click="showModal(artist.artist_uuid)" data-artistuuid="{{artist.artist_uuid}}">
         <span> <img v-bind:src="artist.image" alt="{{ artist.name }}"/></span>
         <section>
           <h3>{{artist.name}}</h3>
@@ -19,27 +19,24 @@
       </div>
     </section>
   </div>
-  <div id="myModal" class="modal">
 
-    <!-- Modal content -->
+  <div id="modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="close">×</span>
-        <h2>Modal Header</h2>
+        <span v-on:click="closeModal" class="close">×</span>
+        <h2>{{selected_artist.name}}</h2>
       </div>
       <div class="modal-body">
-        <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>      <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>      <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>      <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>      <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>      <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>      <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>
-        <p>Some other text...</p>      <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>      <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>      <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>
+        <div class="modal-body">
+          <section class="description">
+            <div v-html="selected_artist.description.html"></div>
+          </section>
+          <section class="images">
+            <div class="images" v-for="image in selected_artist.images" track-by="$index">
+              <img v-bind:src="image"/>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -62,8 +59,7 @@ export default {
       artists: [],
       showModal_: false,
       selected_artist: null,
-      modal: null,
-      span: null
+      modal: null
     }
   },
   methods: {
@@ -71,31 +67,20 @@ export default {
       this.selected_artist = this.artists.find((artist) => {
         return artist.artist_uuid === id
       })
-      document.querySelector('section.body-container').style.overflowY = 'hidden'
-      this.showModal_ = true
-    },
-    simple: function () {
-      const self = this
-      this.modal.style.display = 'block';
+      this.modal.style.display = 'block'
       document.querySelector('body').style.overflowY = 'hidden'
       document.querySelector('html').style.overflowY = 'hidden'
       document.querySelector('html').style.webkitOverflowScrolling = 'auto'
       document.querySelector('body').style.webkitOverflowScrolling = 'auto'
 
-      this.span.onclick = function() {
-          self.modal.style.display = 'none';
-          document.querySelector('body').style.overflowY = ''
-          document.querySelector('html').style.overflowY = ''
-          document.querySelector('html').style.webkitOverflowScrolling = 'touch'
-          document.querySelector('html').style.webkitOverflowScrolling = 'touch'
-      }
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == self.modal) {
-            self.modal.style.display = 'none';
-        }
-      }
+    },
+    closeModal: function() {
+      this.modal.style.display = 'none'
+      this.selected_artist = null
+      document.querySelector('body').style.overflowY = ''
+      document.querySelector('html').style.overflowY = ''
+      document.querySelector('html').style.webkitOverflowScrolling = 'touch'
+      document.querySelector('html').style.webkitOverflowScrolling = 'touch'
     },
     submit: function () {
       submitRegister(this.authData, (err, data) => {
@@ -113,8 +98,7 @@ export default {
     document.querySelector('html').style.webkitOverflowScrolling = 'touch'
     document.querySelector('body').style.webkitOverflowScrolling = 'touch'
 
-    this.modal = document.getElementById('myModal');
-    this.span = document.getElementsByClassName('close')[0];
+    this.modal = document.querySelector('#modal')
 
     getAllArtists((err, res) => {
       if (err)
