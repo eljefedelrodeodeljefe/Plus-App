@@ -1,15 +1,15 @@
 <style>
-div.artistlist-container {
+/* REVIEW(eljefedelrodeodeljefe): soem flexbox bug in here
+/*div.artistlist-container {
   overflow-y: scroll;
   width: 100%;
   display: -ms-flexbox;
-  display:-webkit-flex;
   display:-webkit-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
+}*/
 
 section.artistlist-content {
   overflow-y: scroll;
