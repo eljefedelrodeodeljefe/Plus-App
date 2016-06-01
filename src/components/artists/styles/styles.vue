@@ -2,45 +2,13 @@
 div.artistlist-container {
   overflow-y: scroll;
   width: 100%;
-  /*display: -ms-flexbox;*/
-  /*display:-webkit-flex;*/
+  display: -ms-flexbox;
+  display:-webkit-flex;
   display:-webkit-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-div.artistlist-container > nav.role {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  height: 3em;
-}
-div.artistlist-container > nav.role > label {
-  width: 50%;
-  text-align: center;
-  line-height: 3em;
-  border-color: rgba(215, 215, 215, 1);
-  border-width: thin;
-  border-style: solid;
-  border-radius: 0.1em;
-}
-
-div.artistlist-container > nav.role > label.artist {
-  background-color: rgba(134, 237, 255, 1);
-  margin-left: 0.1em;
-  margin-right: 0.05em;
-}
-
-div.artistlist-container > nav.role > label.agent {
-  background-color: rgba(238, 134, 255, 1);
-  margin-right: 0.1em;
-  margin-left: 0.05em;
 }
 
 section.artistlist-content {
@@ -62,13 +30,6 @@ section.artistlist-content {
   padding-top: 3em;
 }
 
-section.artistlist-content.artist {
-  background: rgba(0, 125, 255, 1);
-}
-section.artistlist-content.agent {
-  background: rgba(4, 46, 89, 1);
-}
-
 section.artistlist-content h1 {
   color: rgba(235, 235, 235, 1);;
   font-size: 2em;
@@ -85,19 +46,55 @@ section.artistlist-content p {
   font-size: 0.7em;
 }
 
-img.login.plus-icon {
-  margin-left: auto;
-  margin-right: auto;
-  width: 6em;
-  height: 6em;
-  box-shadow: 0.2em 0.2em 0.5em 0 rgba(255,255,255,.44);
+
+div.artistlist-container > nav.filter {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: rgba(255, 0, 0, 0.5);
+  height: 3em;
 }
 
-div.input {
+section.artistlist-content.artist {
+
+}
+
+div.artist-cell {
+  user-select: none;
+  padding: 0.2em;
+  padding-left: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 0.12em;
+  /*background-color: white;*/
+  height: 4em;
+  border-bottom-width: 0.1em;
+  border-bottom-color: rgba(218, 218, 218, 0.5);
+  border-bottom-style: solid;
+}
+div.artist-cell > span {
+  height: 100%;
+}
+div.artist-cell > span > img {
+  width: auto;
+  height: 100%;
+}
+div.artist-cell > section {
+  padding-left: 0.5em;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,39 +102,38 @@ div.input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
-div.input > label {
-  margin-top: 0.6em;
+div.artist-cell > section > h3 {
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+label.second-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+label.second-line > * {
   font-size: 0.8em;
-  color: rgba(187, 187, 187, 0.8);
+  padding-right: 0.2em;
 }
 
-div.input > input[type=text], div.input > input[type=password] {
-  margin-top: 0.3em;
-  width: 100%;
-  padding: 0.7em 1em;
-  display: inline-block;
-  border: thin solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+span.cities {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
-
-div.input > input.break {
-  margin-bottom: 1.5em;
+span.cities > * {
+  font-style: italic;
+  padding-right: 0.2em;
 }
-
-div.input > label.bottom {
-  text-align: center;
-  line-height: 2.5em;
-  color: white;
-  margin-top: 0.5em;
-  width: 100%;
-  background-color: rgba(123, 214, 31, 1);
-  height: 2.5em;
-}
-
-label.isActive {
-  z-index: 3;
-}
-
 </style>
