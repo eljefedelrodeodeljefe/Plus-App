@@ -1,9 +1,10 @@
 <style>
+
+
 .modal-mask {
+  overflow-y: auto;
   position: fixed;
   z-index: 10;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   display: table;
@@ -17,6 +18,7 @@
 }
 
 .modal-container {
+  overflow-y: auto;
   width: 100%;
   height: 100%;
   background-color: #fff;
@@ -28,12 +30,17 @@
 
 }
 
+.modal-container > .modal-header > h1 {
+
+}
+
 .modal-body {
 
 }
 
 .modal-default-button {
-
+  position: fixed;
+  right: 0;
 }
 
 

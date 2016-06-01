@@ -1,7 +1,6 @@
 
 <template>
   <header id="header"></header>
-  <nav class="content pull request list">
     <div class="artistlist-container">
       <modal :show.sync="showModal_" :artist.sync="selected_artist"></modal>
       <nav class="filter">
@@ -19,7 +18,6 @@
         </div>
       </section>
     </div>
-  </nav>
 </template>
 
 <script>
@@ -45,7 +43,7 @@ export default {
       this.selected_artist = this.artists.find((artist) => {
         return artist.artist_uuid === id
       })
-      console.log(this.selected_artist);
+      document.querySelector('body').style.overflow = 'hidden'
       this.showModal_ = true
     },
     submit: function () {
@@ -58,6 +56,9 @@ export default {
     }
   },
   ready () {
+    // fallback to body being scrollable if there is buggy behaviour
+    document.querySelector('body').style.overflow = ''
+
     getAllArtists((err, res) => {
       if (err)
         console.log(err)

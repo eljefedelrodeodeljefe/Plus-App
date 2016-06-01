@@ -2,7 +2,10 @@
   <div class="modal-mask" v-show="show" transition="modal">
     <div class="modal-wrapper">
       <div class="modal-container">
-
+        <button class="modal-default-button"
+          @click="show = false" v-on:click="resetBodyScroll">
+          &#x2715;
+        </button>
         <div class="modal-header">
           <h1 name="header">
             {{artist.name}}
@@ -24,10 +27,6 @@
         <div class="modal-footer">
           <slot name="footer">
             default footer
-            <button class="modal-default-button"
-              @click="show = false">
-              OK
-            </button>
           </slot>
         </div>
       </div>
@@ -37,6 +36,11 @@
 
 <script>
   export default {
+    methods: {
+      resetBodyScroll: function () {
+        document.querySelector('body').style.overflow = ''
+      }
+    },
     props: {
       show: {
         type: Boolean,
