@@ -1,10 +1,15 @@
-
-
 // import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueTouch from 'vue-touch'
 import { configRouter } from './route-config'
 
+class Native {
+  constructor() {
+    this.router = null // needs hook-up from user
+  }
+}
+
+window.Native = new Native()
 
 Vue.use(require('vue-resource'))
 // install router
@@ -12,7 +17,7 @@ Vue.use(VueRouter)
 Vue.use(VueTouch)
 
 // create router
-const router = new VueRouter({
+const router = window.Native.router = new VueRouter({
   // history: true,
   saveScrollPosition: true
 })
