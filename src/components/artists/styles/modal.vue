@@ -68,10 +68,19 @@
 
 .modal-body {
   margin-bottom: 10em;
-  padding: 2px 16px;
+  margin-left: 0;
+  margin-right: 0;
   max-height:100%;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+section.availability {
+  margin-top: 3em;
+}
+
+section.availability h2 {
+  margin-left: 0.6em;
 }
 
 

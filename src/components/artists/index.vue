@@ -36,6 +36,11 @@
               <img v-bind:src="image"/>
             </div>
           </section>
+
+          <section class="availability">
+            <h2>Availability</h2>
+            <calendar></calendar>
+          </section>
         </div>
       </div>
     </div>
@@ -52,7 +57,8 @@ export default {
   components: {
     'styles': require('./styles/styles.vue'),
     'modale_styles': require('./styles/modal.vue'),
-    'modal': require('./modal.vue')
+    'modal': require('./modal.vue'),
+    'calendar': require('../calendar/index.vue')
   },
   data () {
     return {
