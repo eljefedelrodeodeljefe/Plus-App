@@ -41,6 +41,7 @@
             <h2>Availability</h2>
             <calendar></calendar>
             <faresandservices></faresandservices>
+            <formationofcontract></formationofcontract>
           </section>
         </div>
       </div>
@@ -60,7 +61,8 @@ export default {
     'modale_styles': require('./styles/modal.vue'),
     'modal': require('./modal.vue'),
     'calendar': require('../calendar/index.vue'),
-    'faresandservices': require('../fares-and-services/index.vue')
+    'faresandservices': require('../fares-and-services/index.vue'),
+    'formationofcontract': require('../formation-of-contract/index.vue'),
   },
   data () {
     return {
