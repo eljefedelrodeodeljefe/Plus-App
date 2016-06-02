@@ -20,6 +20,9 @@ export function configRouter (router) {
     '/ci': {
       component: require('./components/ci/index.vue')
     },
+    '/chat': {
+      component: require('./components/chat/index.vue')
+    },
     '/test': {
       component: require('./components/test/index.vue')
     },
