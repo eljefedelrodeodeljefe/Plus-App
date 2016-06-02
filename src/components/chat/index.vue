@@ -36,7 +36,7 @@ export default {
     var typing = false;
     var lastTypingTime;
 
-    var socket = io('http://localhost:3000');
+    var socket = io('http://104.155.11.47');
 
     function setUsername () {
       username = 'user'
