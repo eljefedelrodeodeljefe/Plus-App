@@ -154,8 +154,8 @@ section.calendar {
   font-family: 'Dosis', sans-serif;
   color: #fff;
   width: 100%;
-  padding-left: 1em;
-  padding-right: 4em;
+  // padding-left: 1em;
+  // padding-right: 4em;
   // position: absolute;
   // top:50%; left:50%; transform: translateY(-50%) translateX(-50%);
   box-shadow: 5px 10px 20px rgba(0,0,0,.6);
