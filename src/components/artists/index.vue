@@ -40,6 +40,7 @@
           <section class="availability">
             <h2>Availability</h2>
             <calendar></calendar>
+            <faresandservices></faresandservices>
           </section>
         </div>
       </div>
@@ -58,7 +59,8 @@ export default {
     'styles': require('./styles/styles.vue'),
     'modale_styles': require('./styles/modal.vue'),
     'modal': require('./modal.vue'),
-    'calendar': require('../calendar/index.vue')
+    'calendar': require('../calendar/index.vue'),
+    'faresandservices': require('../fares-and-services/index.vue')
   },
   data () {
     return {
